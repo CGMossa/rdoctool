@@ -22,6 +22,14 @@ fn hello_world() -> &'static str {
     "Hello world!"
 }
 
+/// Provide interface to a functionality in a sister package in the
+/// workspace.
+/// @export
+#[extendr]
+fn provide_rsource_json() -> String {
+    rdocjson::parse_rsource_to_json("nonsense").0
+}
+
 // Macro to generate exports.
 // This ensures exported functions are registered with R.
 // See corresponding C code in `entrypoint.c`.

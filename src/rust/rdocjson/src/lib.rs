@@ -1,14 +1,17 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+#[derive(Debug)]
+pub struct Json(pub String);
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+pub fn parse_rsource_to_json(_rsource: &str) -> Json {
+    let rsource_json = r#"
+    {
+        "type": "RSource",
+        "rsource": {
+            "type": "File",
+            "file": {
+                "path": "/path/to/file"
+            }
+        }
     }
+    "#;
+    Json(rsource_json.into())
 }

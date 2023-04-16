@@ -11,3 +11,4 @@ name = 'rdoctool'
 
 [dependencies]
 extendr-api = '*'
+rdocjson = { path = "../rdocjson" }
